@@ -102,4 +102,29 @@ The security log applies vectorization; a security record allows us to increase 
 
 To transform the heterogeneous data into a unified and numerical vector, the architecture utilizes simple values to detect data with patterns (e.g., an IP range or a user agent) and Character N-gram Hashing to vectorize a payload with a number of dimensions. This process is shielded by a 384-bit (FIPS Standard) secret salt.
 
+### 4.1 Context per User
+
+The most deep security solutions (e.g., WAFs) and the stateless AI models fail in the high-level attacks. Some attacks like “low-and-slow”; vulnerability scanning, logic abuse, brute force attacks are impossible to detect with a single payload, the technique to detect this high-level attack is with the analysis of an actor in a long-time window.
+
+To solve this, the L-GAP architecture introduces a stateful component: the Context Encoder. This module maintains a context vector (c) for each unique actor (e.g., IP).
+
+$$
+w(c)
+$$
+
+The weights are dynamically wrapped by the context vector; by multiplying each user's vector with the Hadamard method (⊙) against the weights, we achieve a new context-adjusted vector. This allows for the detection of long-term patterns.
+
+To calculate the context of the user we need a vector that; combine past and future, and scales the vector to avoid chaos. This problem was somewhat complex, but a similar issue has existed in finance and statistics for years. This was solved using the “Exponential Moving Average (EMA)” — (Brown, 1956).
+
+$$
+c_t = (1 - \alpha) c_{t-1} + \alpha v_t
+$$
+
+Where:
+
+1. Cₜ (context vector): updated context vector
+2. Cₜ₋₁ (context vector t-1): previous context vector
+3. vₜ (observation vector): current comportament observation vector (current log)
+4. α (alpha): exponential smoothing factor (memory decay rate)
+
 *This document is issued on the date of October 24, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

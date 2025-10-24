@@ -102,7 +102,7 @@ The security log applies vectorization; a security record allows us to increase 
 
 To transform the heterogeneous data into a unified and numerical vector, the architecture utilizes simple values to detect data with patterns (e.g., an IP range or a user agent) and Character N-gram Hashing to vectorize a payload with a number of dimensions. This process is shielded by a 384-bit (FIPS Standard) secret salt.
 
-### 4.1 Context per User
+### 4.2 Context per User
 
 The most deep security solutions (e.g., WAFs) and the stateless AI models fail in the high-level attacks. Some attacks like “low-and-slow”; vulnerability scanning, logic abuse, brute force attacks are impossible to detect with a single payload, the technique to detect this high-level attack is with the analysis of an actor in a long-time window.
 
@@ -126,5 +126,15 @@ Where:
 2. Cₜ₋₁ (context vector t-1): previous context vector
 3. vₜ (observation vector): current comportament observation vector (current log)
 4. α (alpha): exponential smoothing factor (memory decay rate)
+
+### 4.3 Isotropic Transformations Before the ERF-LM Fine-tuning Cycle
+
+The ERF-LM fine-tuning cycle relies on the LLM, providing high-quality labels for the “Uncertainty Set” (ε). This creates an attack vector: if an adversary hides in his payload a jailbreak, he can introduce poisoned data (OWASP, 2025) into the EUP training cycle.
+
+To prevent this, I adopt the principle from; “In order to detect outliers, we use a linear transformation. Let M = E[xxT] where x is a sample... Consider the transformed space z = A−1x... and we will refer to the transformation as rounding.” — (John D. Dunagan, 2002, p. 21).
+
+![Isotropic Transformations Before Fine-tuning](statics/isotropic-transformations-before-fine-tuning.png)
+
+This isotropic transformation shows the more strange labels, and these vectors are scaled to the security team for a human review (this cycle prevents data poisoning).
 
 *This document is issued on the date of October 24, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

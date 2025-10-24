@@ -2,14 +2,6 @@
 
 **Writed by** Dylan Sutton Chavez
 
-*Artificial Intelligence Engineer and Systems Engineer*
-
-**Date:** October 23, 2025
-
-**© Dylan Sutton Chavez. All rights reserved.**
-
-*This document is issued on the date of October 23, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*
-
 ## Abstract
 
 Deep learning models (e.g., Transformers, RNNs, CNNs) are increasingly deep, with training and fine-tuning cycles predominantly driven by reinforcement learning from human feedback (RLHF). As of October 23, 2025, there exists no established methodology for efficient knowledge transfer from a deep neural network to a linear model. This work proposes a framework in which a linear model quantifies its own predictive uncertainty (ε) and autonomously identifies features that require escalation to a high-capacity model. These selected features are subsequently labeled, enabling the linear model to be trained on the resulting enriched dataset, effectively bridging the gap between linear and deep representations.
@@ -93,3 +85,5 @@ The L-GAP architecture is based on ERF-LM, adding several subsystems that mainta
 5. **Weights and Vector Analyzer:** The architecture of the EUP model is so simple that we can generate a security report with each analysis by comparing the model’s weights with the vector. This allows the security team to understand every decision made by the model and the reasoning behind it.
 
 ![LLM-Assisted Geometric Active Perceptron](statics/llm-assisted-geometric-active-perceptron.png)
+
+*This document is issued on the date of October 23, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

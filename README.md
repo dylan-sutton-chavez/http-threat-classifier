@@ -10,13 +10,9 @@
 
 *This document is issued on the date of October 23, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*
 
----
-
 ## Abstract
 
 Deep learning models (e.g., Transformers, RNNs, CNNs) are increasingly deep, with training and fine-tuning cycles predominantly driven by reinforcement learning from human feedback (RLHF). As of October 23, 2025, there exists no established methodology for efficient knowledge transfer from a deep neural network to a linear model. This work proposes a framework in which a linear model quantifies its own predictive uncertainty (ε) and autonomously identifies features that require escalation to a high-capacity model. These selected features are subsequently labeled, enabling the linear model to be trained on the resulting enriched dataset, effectively bridging the gap between linear and deep representations.
-
----
 
 ## 1. Introduction and Background
 

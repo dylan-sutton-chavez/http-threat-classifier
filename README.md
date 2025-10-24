@@ -86,4 +86,18 @@ The L-GAP architecture is based on ERF-LM, adding several subsystems that mainta
 
 ![LLM-Assisted Geometric Active Perceptron](statics/llm-assisted-geometric-active-perceptron.png)
 
+### 4.1 Model Input Vector
+
+The security log applies vectorization; a security record allows us to increase the dimensions of our vector, achieving linear separability. These is based in the OWASP Application Security Verification Standards (OWASP ASVS, 2025)
+
+1. **Request Data (HTTP):** Content extracted from the raw request, including the payload (query parameters; truncated at an 8KB limit to prevent DoS), the target URL, method (GET, POST,...) and headers (User-Agent,...).
+
+2. **Network and Session Metadata:** Actor context, including the source IP address, geolocation, session,...
+
+3. **Behavioral Metrics:** Temporal features that track the request rate per session, per errors generated, anomalies and other useful metrics.
+
+4. **Payload Statics:** A static analysis of the payload, including its length, character entropy (detect obfuscation), the frequency of special characters,...
+
+![Security Model Vectorizer](statics/security-model-vectorizer.png)
+
 *This document is issued on the date of October 23, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

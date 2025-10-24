@@ -149,7 +149,7 @@ $$
 i=H(g+salt)
 $$
 $$
-(mod N)
+(modN)
 $$
 
 $$
@@ -162,7 +162,7 @@ This 384-bit cryptographic salt is the critical defensive primitive. It ensures 
 
 One of the biggest problems in security and machine learning (ML) is the interpretability of a model, the benefit of the EUP model is the easy interpretability of the input vector (x), and the model weights (w).
 
-The system can automatically analyze his weights (w) because each weight is mapped with his value (v) → w ∈ v (ip).
+The system can automatically analyze his weights (w) because each weight is mapped with his value. The mapping is represented as w ∈ v with an associated (ip) value.
 
 $$
 s=w*c*x

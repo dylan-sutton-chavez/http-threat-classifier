@@ -102,4 +102,4 @@ The security log applies vectorization; a security record allows us to increase 
 
 To transform the heterogeneous data into a unified and numerical vector, the architecture utilizes simple values to detect data with patterns (e.g., an IP range or a user agent) and Character N-gram Hashing to vectorize a payload with a number of dimensions. This process is shielded by a 384-bit (FIPS Standard) secret salt.
 
-*This document is issued on the date of October 23, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*
+*This document is issued on the date of October 24, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

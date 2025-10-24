@@ -162,10 +162,10 @@ This 384-bit cryptographic salt is the critical defensive primitive. It ensures 
 
 One of the biggest problems in security and machine learning (ML) is the interpretability of a model, the benefit of the EUP model is the easy interpretability of the input vector (x), and the model weights (w).
 
-The system can automatically analyze his weights (w) because each weight is mapped with his value. The mapping is represented as w ∈ v with an associated (ip) value.
+The system can automatically analyze his weights (w) because each weight is mapped with his value (v) → w ∈ v (ip).
 
 $$
-s=w*c*x
+s=w * c * x
 $$
 
 The attribution vector calculation makes the model interpretable, because the attribution (s) create a ranking of the biggest values, then these values are mapped with a map of weights and explain the decision.

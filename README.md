@@ -1,6 +1,6 @@
 # Epsilon Recurrent Feedback for Linear Models (ERF-LM)
 
-**Writed by** Dylan Sutton Chavez
+> **Writed by** Dylan Sutton Chavez. All the rights reserved.
 
 ## Abstract
 

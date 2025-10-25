@@ -84,6 +84,8 @@ The L-GAP architecture is based on ERF-LM, adding several subsystems that mainta
 
 5. **Weights and Vector Analyzer:** The architecture of the EUP model is so simple that we can generate a security report with each analysis by comparing the model’s weights with the vector. This allows the security team to understand every decision made by the model and the reasoning behind it.
 
+6. **Sliding Window Pre-Scanner:** In the (EUP) module, the system includes two models. The Sliding Window Pre-Scanner takes the user’s payload and performs vectorization in 50-dimensional chunks using the Payload Vectorization with O(1) Character N-gram Hashing technique. This process enables a deep analysis of the user’s payload to detect attacks such as SQL injection (e.g., ' OR '1'='1'). The model processes the payload using a sliding window algorithm and returns the analysis to the other EUP component, which performs a complete request analysis.
+
 ![LLM-Assisted Geometric Active Perceptron](statics/llm-assisted-geometric-active-perceptron.png)
 
 ### 4.1 Model Input Vector
@@ -170,4 +172,4 @@ $$
 
 The attribution vector calculation makes the model interpretable, because the attribution (s) create a ranking of the biggest values, then these values are mapped with a map of weights and explain the decision.
 
-*This document is issued on the date of October 24, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*
+*This document is issued on the date of October 25, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

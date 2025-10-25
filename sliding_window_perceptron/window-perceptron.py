@@ -4,7 +4,8 @@ class WindowPerceptron:
     def __init__(self):
         None
         
-    allowed_characters = compile(r"[^a-z0-9;'/\\*_\-=+<>\(\)\{\}\[\],.!?:@#$%^&|~`\"]")
+    # class variable that compile the regex pattern
+    _allowed_characters = compile(r"[^a-z0-9;'/\\*_\-=+<>\(\)\{\}\[\],.!?:@#$%^&|~`\"]")
     
     def _slices_into_parts(self, text: str, size: int):
         """
@@ -33,7 +34,7 @@ class WindowPerceptron:
 
         time complexity → o(n)
         """
-        return sub(self.allowed_characters, '', payload.lower())
+        return sub(self._allowed_characters, '', payload.lower())
     
     def _ngram_vector(self, ngram: str):
         """

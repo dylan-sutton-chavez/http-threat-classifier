@@ -172,4 +172,8 @@ $$
 
 The attribution vector calculation makes the model interpretable, because the attribution (s) create a ranking of the biggest values, then these values are mapped with a map of weights and explain the decision.
 
+## 4.6 Sliding Window Pre-Scanner 
+
+Takes the user’s payload and performs vectorization in 50-dimensional chunks using the Payload Vectorization with O(1) Character N-gram Hashing technique. This process enables a deep analysis of the user’s payload to detect attacks such as SQL injection (e.g., ' OR '1'='1'). The model processes the payload using a sliding window algorithm and returns the analysis to the other EUP component, which performs a complete request analysis.
+
 *This document is issued on the date of October 25, 2025 to whom it may concern, containing an explanation of the system ERF-LM.*

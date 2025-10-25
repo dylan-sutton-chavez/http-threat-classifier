@@ -1,1 +1,0 @@
-VECTOR_PROCESSING_SWITCH_POINT: int = 20 # activates vectorized operation for sufficiently large arrays

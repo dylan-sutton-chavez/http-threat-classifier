@@ -139,7 +139,7 @@ To prevent this, I adopt the principle from; “In order to detect outliers, we 
 
 This isotropic transformation shows the more strange labels, and these vectors are scaled to the security team for a human review (this cycle prevents data poisoning).
 
-## 4.4 Payload Vectorization with O(1) Character N-gram Hashing
+### 4.4 Payload Vectorization with O(1) Character N-gram Hashing
 
 A solid security architecture needs a semantic analysis of the payload content, to verify if the payload has an attack (e.g., SQL injections: ' OR '1'='1'). While the EUP architecture's O(1) inference is a core requirement, traditional vocabulary-based vectorization represents a non-O(1).
 
@@ -160,7 +160,7 @@ $$
 
 This 384-bit cryptographic salt is the critical defensive primitive. It ensures that the resulting vector's position is computationally unpredictable to an attacker. This unpredictability is what guarantees the efficacy of the Geometric Outlier Filter; an attacker cannot "aim" their poisoned vector at the benign cluster and is forced to land in a random, isolated geometric position, ensuring their detection.
 
-## 4.5 Weights and Vector Analyzer
+### 4.5 Weights and Vector Analyzer
 
 One of the biggest problems in security and machine learning (ML) is the interpretability of a model, the benefit of the EUP model is the easy interpretability of the input vector (x), and the model weights (w).
 
@@ -172,7 +172,7 @@ $$
 
 The attribution vector calculation makes the model interpretable, because the attribution (s) create a ranking of the biggest values, then these values are mapped with a map of weights and explain the decision.
 
-## 4.6 Sliding Window Pre-Scanner 
+### 4.6 Sliding Window Pre-Scanner 
 
 Takes the user’s payload and performs vectorization in 50-dimensional chunks using the Payload Vectorization with O(1) Character N-gram Hashing technique. This process enables a deep analysis of the user’s payload to detect attacks such as SQL injection (e.g., ' OR '1'='1'). The model processes the payload using a sliding window algorithm and returns the analysis to the other EUP component, which performs a complete request analysis.
 

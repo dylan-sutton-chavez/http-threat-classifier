@@ -20,7 +20,7 @@ The object `SlicerVectorizer` object have a function named "vectorized_slices"; 
 
 The slicer vectorizer object whait to receive the arguments; `salt: int`, `chunk_size: int = 150`, `ngram_size: int = 3`. The arguments refered to sizes are optional.
 
-```
+```python
 window_perceptron = SlicerVectorizer(salt) # initialize the slicer vectorizer
 ```
 

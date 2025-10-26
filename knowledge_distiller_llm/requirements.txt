@@ -1,1 +1,2 @@
 xai_sdk>=1.1.0
+pydantic==2.11.7

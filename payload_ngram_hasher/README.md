@@ -42,6 +42,6 @@ print(ngram_vectorized_slices)
 
 Printed vectors (a list of vectors):
 
-``bash
+```bash
 [[1.4764329611671388e-104,... 4.9323248120543724e-108, 2.7700011189849413e-114]]
 ```

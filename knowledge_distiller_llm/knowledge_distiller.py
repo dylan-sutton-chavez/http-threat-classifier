@@ -7,7 +7,7 @@ class PayloadClassified(BaseModel):
     explanation: str = Field(description='Sentence of your reasoning (max length; 43 words)') # the reasoning of the model of his decission
 
 class KnowledgeDistillerLLM:
-    def __init__(self, model: str):
+    def __init__(self, model: str, api_key: str):
         """
         initialize the method with model, system prompts and LLM client
 
@@ -27,7 +27,7 @@ class KnowledgeDistillerLLM:
 
         # initialize the LLM model client whit a timeout of 60 seconds
         self.client = Client(
-            api_key='xai-pjQsCmNgzZCIbVbJLjAr7CNSCKGBF2T1KhxZAl8YPv32DWOzrC4riOfAoHRjpLOsbpLAM84140Um6jxZ',
+            api_key=api_key,
             timeout=60,
         )
 
@@ -59,7 +59,9 @@ class KnowledgeDistillerLLM:
         return response
 
 if __name__ == '__main__':
-    knowledge_distiller = KnowledgeDistillerLLM("grok-4-fast-reasoning") # select the model and initialize the object
+    api_key = 'xai-abcdefghijklmnopqrstuvxyz' # example api key (xai api key)
+
+    knowledge_distiller = KnowledgeDistillerLLM("grok-4-fast-reasoning", api_key) # select the model and initialize the object
 
     # make inference to the LLM model whit a payload
     payload_classfied = knowledge_distiller.inference_query(payload='The actor made 120 request in 1 minute; <payload>Hello, my name is Maria and I like reading books.</payload>')

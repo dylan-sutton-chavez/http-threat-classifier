@@ -36,7 +36,7 @@ salt = randbits(384) # generate a random salt (384 bits)
 
 window_perceptron = SlicerVectorizer(salt) # initialize the slicer vectorizer
 
-ngram_vectorized_slices = window_perceptron.vectorized_slices(payload) # vectorize the payload and inject a hashing salt
+ngram_vectorized_slices: list[list] = window_perceptron.vectorized_slices(payload) # vectorize the payload and inject a hashing salt
 print(ngram_vectorized_slices)
 ```
 
@@ -44,4 +44,20 @@ Printed vectors (a list of vectors):
 
 ```bash
 [[1.4764329611671388e-104,... 4.9323248120543724e-108, 2.7700011189849413e-114]]
+```
+
+### 2.3. Sanitize a Payload (lowercase and regex)
+
+`sanitize_payload` function take an argument: `payload: str`. Where receive a raw payload and return a sanitized payload.
+
+```python
+# sanitize a payload (convert to lower and sanitize some regex characters)
+payload_sanitized: str = window_perceptron.sanitize_payload(payload)
+print(payload_sanitized)
+```
+
+Expected output sanitized:
+
+```bash
+inmodernwebdevel... nsursusernamelikeadmin'or'1'='1canrevealvu... ontrolledenv...
 ```

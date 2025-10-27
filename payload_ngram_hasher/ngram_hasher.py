@@ -34,7 +34,7 @@ class SlicerVectorizer:
 
         time complexity → o(n)
         """
-        payload_sanitized: str = self._sanitize_payload(payload)
+        payload_sanitized: str = self.sanitize_payload(payload)
 
         slices: list[list] = []
 
@@ -56,6 +56,20 @@ class SlicerVectorizer:
 
         return slices
     
+    def sanitize_payload(self, payload: str):
+        """
+        sanitize the payload of the user (lowercase, sanitize characters,...)
+
+        args:
+            payload: str → user payload (transmited data)
+
+        output:
+            str → user payload normalized
+
+        time complexity → o(n)
+        """
+        return sub(self.allowed_characters, '', payload.lower())
+    
     def _slices_into_parts(self, text: str, size: int):
         """
         slice a text into parts (chunks)
@@ -70,20 +84,6 @@ class SlicerVectorizer:
         time complexity → o(n)
         """
         return [text[i:i+size] for i in range(0, len(text), size)]
-
-    def _sanitize_payload(self, payload: str):
-        """
-        sanitize the payload of the user (lowercase, sanitize characters,...)
-
-        args:
-            payload: str → user payload (transmited data)
-
-        output:
-            str → user payload normalized
-
-        time complexity → o(n)
-        """
-        return sub(self.allowed_characters, '', payload.lower())
     
     def _ngram_vector(self, ngram: str):
         """
@@ -143,6 +143,10 @@ if __name__ == '__main__':
     salt = randbits(384) # generate a random salt (384 bits)
 
     window_perceptron = SlicerVectorizer(salt) # initialize the slicer vectorizer
+
+    # sanitize a payload (convert to lower and sanitize some regex characters)
+    payload_sanitized: str = window_perceptron.sanitize_payload(payload)
+    print(payload_sanitized)
     
-    ngram_vectorized_slices = window_perceptron.vectorized_slices(payload) # vectorize the payload and inject a hashing salt
+    ngram_vectorized_slices: list[list] = window_perceptron.vectorized_slices(payload) # vectorize the payload and inject a hashing salt
     print(ngram_vectorized_slices)

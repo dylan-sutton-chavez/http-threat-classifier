@@ -15,8 +15,10 @@ class UrlAnalyisis:
             for idx, char in enumerate(last_path):
                 if char == '?':
                     self.query: str | list[float] = last_path[idx:]
+
+                    self.url_path_splited[-1] = last_path[:idx]
                     break
-                    
+
         else:
             self.query: str = None
 

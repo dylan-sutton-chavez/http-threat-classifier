@@ -16,10 +16,6 @@ class Header:
         self.host: str | list[float] = host
         self.host_length: int = len(host)
 
-        self.content_type: str = None
-        self.cookie: str = None
-        self.authorization: str = None
-
     def _os_name(self, lower_user_agent: str):
         """
         encode te current operative system
@@ -79,5 +75,24 @@ class Header:
         return stripped_path.split('/')
     
 if __name__ == '__main__':
-    header = Header('Mozilla/5.0 (Windows NT 10.0; Win64; x64; 192.168.0.15) Chrome/122.0.6261.95 Safari/537.36')
-    print(header.browser_type, header.os_name)
+    """run this block when the code is runed directly"""
+
+    # create an analyisis of header information; user agent, referer and host
+    header = Header('Mozilla/5.0 (Windows NT 10.0; Win64; x64; 192.168.0.15) Chrome/122.0.6261.95 Safari/537.36', 'https://www.ibm.com/cloud/learn/what-is-hybrid-cloud/user?=id1245', 'https://www.ibm.com/cloud/')
+    
+    # format the params of the object 'header'
+    header_data = {
+        'user_agent': header.user_agent,
+        'browser_type': header.browser_type,
+        'os_name': header.os_name,
+
+        'referer_splited': header.referer_splited,
+        'referer': header.referer,
+        'referer_length': header.referer_length,
+        'referer_depth': header.referer_depth,
+
+        'host': header.host,
+        'host_length': header.host_length
+    }
+
+    print(header_data)

@@ -10,7 +10,7 @@ class Header:
 
         self.referer_splited: list[str] | list[float] = self._split_url_path(referer)
         self.referer: str | list[float] = referer
-        self.referer_length: int = len(self.referer_length)
+        self.referer_length: int = len(self.referer)
         self.referer_depth: int = len(self.referer_splited)
 
         self.host: str | list[float] = host

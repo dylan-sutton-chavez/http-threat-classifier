@@ -7,6 +7,7 @@ class ClientProfile:
         self.errors_rate: int = None
         self.device_type: int = None
         self.browser: int = None
+        self.port: int = None
 
     def _method_encoder(method: str):
         """

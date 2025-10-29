@@ -22,6 +22,7 @@ class ClientProfile:
         """
         method_lower: str = method.lower()
 
+        # encoded actions bag
         actions_bag = {
             "get": 1.0,
             "head": 1.0,
@@ -32,6 +33,7 @@ class ClientProfile:
             "options": 0.5,
         }
 
+        # confirm if the method is in the actions bag
         if method_lower in actions_bag:
             return actions_bag[method_lower]
         

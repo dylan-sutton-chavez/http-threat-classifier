@@ -1,7 +1,19 @@
 from re import search, sub
 
 class Header:
-    def __init__(self, user_agent: str, referer: str, host: str):
+    def __init__(self, user_agent: str, referer: str):
+        """
+        initialize and make an statiscal analysis for; user agent, referer
+
+        args:
+            user_agent: str → full raw user agent
+            referer: str → referer website
+
+        output:
+            None
+
+        time complexity → o(n)
+        """
         lower_user_agent: str = user_agent.lower()
 
         self.user_agent: str | list[float] = user_agent
@@ -12,9 +24,6 @@ class Header:
         self.referer: str | list[float] = referer
         self.referer_length: int = len(self.referer)
         self.referer_depth: int = len(self.referer_splited)
-
-        self.host: str | list[float] = host
-        self.host_length: int = len(host)
 
     def _os_name(self, lower_user_agent: str):
         """
@@ -77,8 +86,8 @@ class Header:
 if __name__ == '__main__':
     """run this block when the code is runed directly"""
 
-    # create an analyisis of header information; user agent, referer and host
-    header = Header('Mozilla/5.0 (Windows NT 10.0; Win64; x64; 192.168.0.15) Chrome/122.0.6261.95 Safari/537.36', 'https://www.ibm.com/cloud/learn/what-is-hybrid-cloud/user?=id1245', 'https://www.ibm.com/cloud/')
+    # create an analyisis of header information; user agent, referer
+    header = Header('Mozilla/5.0 (Windows NT 10.0; Win64; x64; 192.168.0.15) Chrome/122.0.6261.95 Safari/537.36', 'https://www.ibm.com/cloud/learn/what-is-hybrid-cloud/user?=id1245')
     
     # format the params of the object 'header'
     header_data = {
@@ -89,10 +98,7 @@ if __name__ == '__main__':
         'referer_splited': header.referer_splited,
         'referer': header.referer,
         'referer_length': header.referer_length,
-        'referer_depth': header.referer_depth,
-
-        'host': header.host,
-        'host_length': header.host_length
+        'referer_depth': header.referer_depth
     }
 
     print(header_data)

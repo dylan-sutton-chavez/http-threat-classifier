@@ -195,8 +195,6 @@ Your `Header.py` class is too simple (only User-Agent and Referer). It cannot se
 * `header_count: int` (An anomalous number of headers).
 * `all_headers_entropy: float` (To detect XSS in cookie headers, etc.).
 
----
-
 #### 2. Missing Features: Enumeration Analysis (Paths and Queries)
 
 Your `UrlAnalyisis.py` only measures length and depth. It does not analyze the content of the paths or the query parameters.

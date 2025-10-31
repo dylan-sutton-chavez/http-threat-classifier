@@ -1,7 +1,7 @@
 from re import search, sub
 
 class Header:
-    def __init__(self, user_agent: str, referer: str):
+    def __init__(self, user_agent: str, referer: str, content_length: int, transfer_encoding: str):
         """
         initialize and make an statiscal analysis for; user agent, referer
 
@@ -24,6 +24,9 @@ class Header:
         self.referer: str | list[float] = referer
         self.referer_length: int = len(self.referer)
         self.referer_depth: int = len(self.referer_splited)
+
+        self.content_length: int = content_length
+        self.transfer_encoding: int = transfer_encoding
 
     def _os_name(self, lower_user_agent: str):
         """

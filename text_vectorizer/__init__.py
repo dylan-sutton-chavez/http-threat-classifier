@@ -1,0 +1,1 @@
+# initialize `text_vectorizer` as a module

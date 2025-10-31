@@ -1,0 +1,42 @@
+{
+    "model_name": "Gate OR Simple Perceptron Tuned",
+    "description": "Fine-tuned simple perceptron using the gate `OR`",
+    "created_at": "2025-10-30 13:31:42",
+    "author": "Dylan Sutton Chavez",
+    "parameters": {
+        "weights": [
+            0.5384657924598851,
+            0.5640696324598853
+        ],
+        "bias": 0.64417612
+    },
+    "normalization": {
+        "means": [
+            0.5,
+            0.5
+        ],
+        "standard_deviation": [
+            0.5773502691896257,
+            0.5773502691896257
+        ]
+    },
+    "training": {
+        "epochs": 10,
+        "learning_rate": 0.65,
+        "dataset": "C:\\core_geometric_active_perceptron\\core\\test\\gate_or.json",
+        "time": 0.12840001727454364
+    },
+    "pst_description": {
+        "name": "Gate OR Simple Perceptron",
+        "description": "A simple perceptron trained with the gate `OR`",
+        "created_at": "2025-10-30 13:27:59",
+        "author": "Dylan Sutton Chavez",
+        "pst_model_path": "C:\\core_geometric_active_perceptron\\core\\test\\gate-or-simple-perceptron.2025_10_30.json"
+    },
+    "pst_training": {
+        "epochs": 30,
+        "learning_rate": 0.65,
+        "dataset": "C:\\core_geometric_active_perceptron\\core\\test\\gate_or.json",
+        "time": 0.06969999230932444
+    }
+}

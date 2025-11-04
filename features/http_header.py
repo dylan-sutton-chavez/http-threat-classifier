@@ -8,6 +8,8 @@ class Header:
         args:
             user_agent: str → full raw user agent
             referer: str → referer website
+            content_length: int → content length 
+            transfer_encoding: str → encoding of the transfer (e.g., chunked, compress,...)
 
         output:
             None

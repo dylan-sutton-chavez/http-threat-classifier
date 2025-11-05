@@ -1,3 +1,7 @@
+**Web Application and API Protection WAF**
+
+---
+
 **Threat Detection Capabilities**
 
 1. *Payload Injections (e.g., SQLi, XSS, Commands,...)*

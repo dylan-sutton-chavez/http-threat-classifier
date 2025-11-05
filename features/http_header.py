@@ -1,7 +1,7 @@
 from re import search, sub
 
 class Header:
-    def __init__(self, user_agent: str, referer: str, content_length: int, transfer_encoding: str):
+    def __init__(self, user_agent: str, referer: str, content_length: int, transfer_encoding: str, cookie: str):
         """
         initialize and make an statiscal analysis for; user agent, referer
 
@@ -10,6 +10,7 @@ class Header:
             referer: str → referer website
             content_length: int → content length 
             transfer_encoding: str → encoding of the transfer (e.g., chunked, compress,...)
+            cookie: str → cookie of session
 
         output:
             None
@@ -29,6 +30,9 @@ class Header:
 
         self.content_length: int = content_length
         self.transfer_encoding: int = transfer_encoding
+
+        self.cookie_lengt: int = len(cookie)
+        self.cookies_counter: int = cookie.count(';')
 
     def _os_name(self, lower_user_agent: str):
         """

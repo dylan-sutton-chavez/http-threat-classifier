@@ -1,4 +1,4 @@
-**Web Application and API Protection WAF**
+**Web Application and API Protection WAF (layer seven)**
 
 ---
 
@@ -43,3 +43,4 @@
 4. *Prompt Shielding*
 
 5. *High Aviability (hot-swapping)*
+

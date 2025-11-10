@@ -12,6 +12,7 @@ class ClientProfile:
         time complexity → o(1)
         """
         self.origin_ip: str = None
+        self.geolocalization: str = None
         self.http_method: float = self._method_encoder(method)
         self.request_rate: int = None
         self.errors_rate: int = None

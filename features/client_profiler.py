@@ -1,5 +1,16 @@
 class ClientProfile:
     def __init__(self, method: str):
+        """
+        calculare the vector of the client in the current request
+
+        args:
+            method: str →
+
+        output:
+            None
+
+        time complexity → o(1)
+        """
         self.origin_ip: str = None
         self.geolocalization: str = None
         self.http_method: float = self._method_encoder(method)

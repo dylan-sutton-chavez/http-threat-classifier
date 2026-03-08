@@ -1,6 +1,6 @@
 # HTTP Threat Classifier with a Grey Area
 
-A WAF that blocks everything is useless. One that allows everything is dangerous. epsilon sits between both: it blocks what it's confident about, allows what it's confident about, and surfaces what it isn't — giving you a signal instead of a silent wrong answer on the requests that matter most.
+A linear classifier extended with a bounded uncertainty region ±ε around the decision boundary. Inputs whose net activation satisfies −ε ≤ z ≤ ε yield a third output state instead of a forced classification, and are escalated to an LLM oracle — a two-tier architecture that trades latency for precision on the inputs where a linear model is least reliable.
 
 ---
 
@@ -166,3 +166,4 @@ xai-sdk
 ## Reference
 
 > Dylan Sutton Chávez (2025).
+

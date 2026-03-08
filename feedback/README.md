@@ -7,7 +7,7 @@ _Knowledge distillation is a machine learning technique that aims to transfer th
 The object `KnowledgeDistillerLLM` works as a wrapper of the xai sdk, where the model receive two arguments; `model: str`, `api_key: str`.
 
 ```python
-api_key = 'xai-abcdefghijklmnopqrstuvxyz' # example api key (xai api key)
+api_key = 'n/A' # example api key (xai api key)
 knowledge_distiller = KnowledgeDistillerLLM("grok-4-fast-reasoning", api_key) # select the model and initialize the object
 ```
 

@@ -78,10 +78,11 @@ if __name__ == '__main__':
         python -B -m feedback.knowledge_client
     """
 
-    api_key = 'xai-abcdefghijklmnopqrstuvxyz' # example api key (xai api key)
+    api_key = 'n/A' # example api key (xai api key)
 
     knowledge_distiller = KnowledgeDistillerLLM("grok-4-fast-reasoning", api_key) # select the model and initialize the object
 
     # make inference to the LLM model whit a payload
     payload_classfied = knowledge_distiller.inference_query(payload='The actor made 120 request in 1 minute; <payload>Hello, my name is Maria and I like reading books.</payload>')
+
     print(payload_classfied)
